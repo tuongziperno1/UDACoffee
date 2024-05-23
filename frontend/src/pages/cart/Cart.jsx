@@ -25,7 +25,7 @@ function Cart() {
     const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
     const handleConfirm = async () => {
-        const apiUrl = `http://localhost:5000/api/order/?tableNumber=${tableNumber}`;
+        const apiUrl = `http://157.10.53.52:5000/api/order/?tableNumber=${tableNumber}`;
         
         const orderDetails = {
             products: cartItems.map(item => ({

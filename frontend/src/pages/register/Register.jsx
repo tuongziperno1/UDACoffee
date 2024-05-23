@@ -28,7 +28,7 @@ export default function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/register', formData);
+            const response = await axios.post('http://157.10.53.52:5000/api/auth/register', formData);
             console.log(response.data);
             alert("Đăng ký thành công !")
             navigate('/login');
