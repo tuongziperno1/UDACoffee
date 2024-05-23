@@ -37,7 +37,7 @@ const Admin = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await axios.get("http://157.10.53.52:5000/api/order/");
+                const response = await axios.get("http://157.10.53.52/api/order/");
                 const sortedOrders = response.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
                 setOrders(sortedOrders);
             } catch (error) {
@@ -46,7 +46,7 @@ const Admin = () => {
         };
         const fetchCategories = async () => {
             try {
-                const response = await axios.get('http://157.10.53.52:5000/api/category/');
+                const response = await axios.get('http://157.10.53.52/api/category/');
                 setCategories(response.data);
             } catch (error) {
                 console.error(error);
@@ -74,7 +74,7 @@ const Admin = () => {
     const handleConfirmation = async (orderId, action) => {
         try {
             // Define the endpoint URL
-            const url = `http://157.10.53.52:5000/api/order/${orderId}`;
+            const url = `http://157.10.53.52/api/order/${orderId}`;
 
             // Define the request body based on the action
             const requestBody = {
@@ -107,7 +107,7 @@ const Admin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://157.10.53.52:5000/api/product/', formValues);
+            await axios.post('http://157.10.53.52/api/product/', formValues);
             alert('Product added successfully');
             navigate('/menu/0');
         } catch (error) {
